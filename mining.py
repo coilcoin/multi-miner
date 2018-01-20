@@ -32,7 +32,6 @@ def mine(incr):
 	global total
 	s = requests.Session()
 	url = "http://coilcoin.nfshost.com/"
-	print(miner.address)
 	f = open(WALLET_FOLDER + "../peers.txt", "r")
 	first = f.readlines()[0]
 	if first:
@@ -80,8 +79,6 @@ def mine(incr):
 					print("New block mined")
 					elapsed = (datetime.datetime.now() - started).total_seconds()
 					print("Time Elapsed: ", elapsed , "s")
-					print("Average Speed:", (total / elapsed), " blocks per second")
-
 					print("Node says:", r.text)
 					print()
 
